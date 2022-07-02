@@ -1,3 +1,5 @@
+@use "./../utilities/mixins" as m;
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -7,4 +9,69 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  $container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+  );
+
+  @each $name, $max-width in $container-max-widths {
+    @include m.breakpoint-up($name) {
+      max-width: $max-width;
+    }
+  }
+
+  // @include m.breakpoint-up(sm) {
+  //   max-width: 540px;
+  // }
+
+  // @include m.breakpoint-up(md) {
+  //   max-width: 720px;
+  // }
+
+  // @include m.breakpoint-up(lg) {
+  //   max-width: 960px;
+  // }
+
+  // @include m.breakpoint-up(xl) {
+  //   max-width: 1140px;
+  // }
+
+  // @include m.breakpoint-up(xxl) {
+  //   max-width: 1320px;
+  // }
+}
+
+.d {
+  &-block {
+    display: block;
+  }
+
+  &-none {
+    display: none;
+  }
+}
+
+.p {
+  &y {
+    &-8 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
 }
