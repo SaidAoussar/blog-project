@@ -1,0 +1,88 @@
+@use "./../../styles/utilities/mixins" as m;
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    @include m.breakpoint-up(md) {
+      margin-bottom: 0px;
+    }
+  }
+
+  .cardImg {
+    width: 100%;
+    height: 250px;
+    display: block;
+    background-image: url("./../../public/img/demopic/1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .cardBody {
+    padding: 18px 14px;
+
+    @include m.breakpoint-up(md) {
+      padding: 1.25rem;
+    }
+    .title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+
+      a {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .description {
+      color: rgba(0, 0, 0, 0.44);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .metaFooter {
+      display: grid;
+      grid-template-columns: 1fr 6fr 2fr;
+      align-items: center;
+      font-size: 12px;
+      .authorThumb {
+        img {
+          border-radius: 100%;
+        }
+      }
+
+      .authorMeta {
+        .authorName {
+          color: rgba(0, 0, 0, 0.8);
+        }
+        .postDate,
+        .postRead {
+          color: rgba(0, 0, 0, 0.44);
+        }
+        .dot {
+          content: "·";
+          margin-left: 3px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+// this class divide cardImg and card body to two column start from breakpoint meduim
+.extra {
+  @include m.breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    margin-bottom: 0px;
+  }
+
+  .cardImg {
+    @include m.breakpoint-up(md) {
+      height: 100%;
+    }
+  }
+}
