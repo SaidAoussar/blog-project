@@ -1,6 +1,7 @@
 import { useState } from "react";
-import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
+import classNames from "classnames";
 import styles from "./Nav.module.scss";
 import iconHamburger from "../../public/img/icon-hamburger.svg";
 import searchIcon from "../../public/img/search-icon.svg";
@@ -26,13 +27,17 @@ const Nav = () => {
           </div>
           <ul className={`${styles.links} ${displayClass}`}>
             <li>
-              <a href="#">Stories</a>
+              <Link href="/">
+                <a>Stories</a>
+              </Link>
             </li>
             <li>
-              <a href="#">Post</a>
+              <Link href="/post/post">
+                <a>Post</a>
+              </Link>
             </li>
             <li>
-              <a href="#">Author</a>
+              <a href="/author/author">Author</a>
             </li>
             <li>
               <a href="#">
