@@ -1,0 +1,104 @@
+@use "./../../styles/utilities/mixins" as m;
+
+.authorMeta {
+  text-align: center;
+  margin-top: 32px;
+  @include m.breakpoint-up(md) {
+    display: flex;
+    text-align: left;
+    gap: 32px;
+  }
+  .authorThumb {
+    margin-bottom: 8px;
+    img {
+      width: 72px;
+      height: 72px;
+      border-radius: 100%;
+    }
+  }
+  .authorInfo {
+    .authorName {
+      margin-bottom: 8px;
+      .name {
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      .follow {
+        color: #1c9963;
+        font-size: 0.85rem;
+        padding: 3px 10px;
+        margin-left: 5px;
+        background: none;
+        border: 1px solid #02b875;
+        border-radius: 50px;
+      }
+    }
+
+    .authorDescription {
+      color: rgba(0, 0, 0, 0.44);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .metaDate {
+      color: rgba(0, 0, 0, 0.44);
+      font-size: 0.9rem;
+
+      .dot {
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+.post {
+  margin-bottom: 32px;
+  .postTitle {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+  }
+
+  .postImage {
+    margin-bottom: 16px;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .postDescription {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Merriweather;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .postTags {
+    a {
+      color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.05);
+      padding: 5px 10px;
+      border-radius: 3px;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.wrapListPostsRelated {
+  background-color: #fafafa;
+  padding: 40px 0 46px;
+
+  .listPostsRelated {
+    @include m.breakpoint-up(md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+  }
+}
