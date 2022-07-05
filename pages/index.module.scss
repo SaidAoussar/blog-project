@@ -1,0 +1,51 @@
+@use "./../styles/utilities/mixins" as m;
+
+.mainHeading {
+  padding: 32px 0;
+  .siteTitle {
+    font-family: Righteous;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+.listPosts {
+  margin-bottom: 20px;
+  .sectionTitle {
+    font-size: 1.4rem;
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.44);
+  }
+
+  hr {
+    color: rgba(0, 0, 0, 0.15);
+    margin-top: -2px;
+    margin-bottom: 27px;
+    border-bottom: 0;
+  }
+
+  .posts {
+    &TwoColMd {
+      @include m.breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
+
+    &ThreeColMd {
+      @include m.breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+    }
+  }
+}
