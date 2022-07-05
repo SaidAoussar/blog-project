@@ -16,6 +16,16 @@ body {
     "Helvetica Neue", Arial, sans-serif;
 }
 
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -35,26 +45,6 @@ body {
       max-width: $max-width;
     }
   }
-
-  // @include m.breakpoint-up(sm) {
-  //   max-width: 540px;
-  // }
-
-  // @include m.breakpoint-up(md) {
-  //   max-width: 720px;
-  // }
-
-  // @include m.breakpoint-up(lg) {
-  //   max-width: 960px;
-  // }
-
-  // @include m.breakpoint-up(xl) {
-  //   max-width: 1140px;
-  // }
-
-  // @include m.breakpoint-up(xxl) {
-  //   max-width: 1320px;
-  // }
 }
 
 .d {

@@ -22,3 +22,6 @@ The designs were created to the following widths:
 ### Font
 
 - Family: [Righteous](https://fonts.googleapis.com/css?family=Righteous)
+
+- css modules good articles
+  https://devopedia.org/css-modules
