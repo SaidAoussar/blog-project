@@ -21,10 +21,10 @@ const Home: NextPage = () => {
           <hr />
 
           <div className={styles.postsTwoColMd}>
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
+            <PostCard extra />
+            <PostCard extra />
+            <PostCard extra />
+            <PostCard extra />
           </div>
         </div>
       </section>
